@@ -22,12 +22,6 @@ function SingleTodo(props: Prop): JSX.Element {
     inputRef.current?.focus()
   }, [edit])
 
-  const handleDone = (id: number) => {
-    setTodos(todos.map(todo => (
-      todo.id === id ? {...todo, isDone: !todo.isDone} : todo
-    )))
-  }
-
   const handleDelete = (id: number) => {
     setTodos(todos.filter(todo => todo.id !== id))
   }
@@ -38,6 +32,12 @@ function SingleTodo(props: Prop): JSX.Element {
       todo.id === id ? {...todo, todo: editTodo} : todo
     )))
     setEdit(false)
+  }
+
+  const handleDone = (id: number) => {
+    setTodos(todos.map(todo => (
+      todo.id === id ? {...todo, isDone: !todo.isDone} : todo
+    )))
   }
 
   return (

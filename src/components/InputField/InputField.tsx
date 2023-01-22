@@ -13,9 +13,6 @@ function InputField(props: Props): JSX.Element {
 
   const inputRef = useRef<HTMLInputElement>(null)
 
-
-
-
   return (
     <>
       <form className='input' onSubmit={(e) => {
